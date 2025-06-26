@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxograma de Solicitações - Cartão Clara</title>
+    <title>Fluxogramas de Solicitações - Cartão Clara</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,8 +65,8 @@
 <body class="p-8">
 
     <header class="text-center mb-12">
-        <h1 class="text-4xl font-extrabold text-sky-900">Fluxograma de Solicitações - Cartão Clara</h1>
-        <p class="text-lg text-slate-600 mt-2">Processos no ServiceNow.</p>
+        <h1 class="text-4xl font-extrabold text-sky-900">Fluxogramas de Solicitações - Cartão Clara</h1>
+        <p class="text-lg text-slate-600 mt-2">Um guia visual para os principais processos no ServiceNow.</p>
     </header>
 
     <main class="max-w-4xl mx-auto">
@@ -122,63 +122,14 @@
             </div>
         </div>
 
-        <!-- 2. Solicitação de desbloqueio (sem acesso aos comprovantes pendentes) -->
+        <!-- 2. Solicitação de liberação de categoria para compra -->
         <div class="flow-section">
-            <h2 class="flow-title">2. Solicitação de desbloqueio (sem acesso aos comprovantes pendentes)</h2>
+            <h2 class="flow-title">2. Solicitação de liberação de categoria para compra</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
-                    <span class="step-icon">📂</span>
+                    <span class="step-icon">➡️</span>
                     <div class="step-text">
-                        <h4>Abertura no ServiceNow</h4>
-                        <p>Campos:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
-                            <li>Loja</li>
-                            <li>Nome do portador</li>
-                            <li>Motivo da impossibilidade de acesso (ex: gerente desligado)</li>
-                            <li>Nome do novo responsável (se aplicável)</li>
-                            <li>Comprovantes fiscais digitalizados (se disponíveis)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="flow-arrow">⬇️</div>
-            <div class="flow-step">
-                <div class="flow-step-content">
-                    <span class="step-icon">🔍</span>
-                    <div class="step-text">
-                        <h4>Financeiro avalia e, se necessário, assume a prestação de contas</h4>
-                        <p class="text-sm text-slate-700">A equipe financeira analisa a situação e pode assumir a regularização da transação na plataforma Clara.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flow-arrow">⬇️</div>
-            <div class="flow-step">
-                <div class="flow-step-content">
-                    <span class="step-icon">🔓</span>
-                    <div class="step-text">
-                        <h4>Desbloqueio após regularização</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="flow-arrow">⬇️</div>
-            <div class="flow-step">
-                <div class="flow-step-content">
-                    <span class="step-icon">🏁</span>
-                    <div class="step-text">
-                        <h4>Fechamento do chamado</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. Solicitação de liberação de categoria para compra -->
-        <div class="flow-section">
-            <h2 class="flow-title">3. Solicitação de liberação de categoria para compra</h2>
-            <div class="flow-step">
-                <div class="flow-step-content">
-                    <span class="step-icon">📝</span>
-                    <div class="step-text">
-                        <h4>Usuário solicita no ServiceNow</h4>
+                        <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos:</p>
                         <ul class="list-disc ml-5 text-sm text-slate-700">
                             <li>Loja</li>
@@ -213,20 +164,20 @@
                 <div class="flow-step-content">
                     <span class="step-icon">🏁</span>
                     <div class="step-text">
-                        <h4>Fechamento do chamado</h4>
+                        <h4>Encerramento do chamado</h4>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 4. Solicitação de aumento de limite -->
+        <!-- 3. Solicitação de aumento de limite -->
         <div class="flow-section">
-            <h2 class="flow-title">4. Solicitação de aumento de limite</h2>
+            <h2 class="flow-title">3. Solicitação de aumento de limite</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
-                    <span class="step-icon">⬆️</span>
+                    <span class="step-icon">➡️</span>
                     <div class="step-text">
-                        <h4>Chamado no ServiceNow</h4>
+                        <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos:</p>
                         <ul class="list-disc ml-5 text-sm text-slate-700">
                             <li>Loja</li>
@@ -261,20 +212,20 @@
                 <div class="flow-step-content">
                     <span class="step-icon">🏁</span>
                     <div class="step-text">
-                        <h4>Encerramento</h4>
+                        <h4>Encerramento do chamado</h4>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 5. Compra fora da política (com acordo da área de compras) -->
+        <!-- 4. Compra fora da política (com acordo da área de compras) -->
         <div class="flow-section">
-            <h2 class="flow-title">5. Compra fora da política (com acordo da área de compras)</h2>
+            <h2 class="flow-title">4. Compra fora da política (com acordo da área de compras)</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
-                    <span class="step-icon">🛒</span>
+                    <span class="step-icon">➡️</span>
                     <div class="step-text">
-                        <h4>Loja abre chamado</h4>
+                        <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos:</p>
                         <ul class="list-disc ml-5 text-sm text-slate-700">
                             <li>Loja</li>
@@ -317,20 +268,20 @@
                 <div class="flow-step-content">
                     <span class="step-icon">🏁</span>
                     <div class="step-text">
-                        <h4>Fechamento</h4>
+                        <h4>Encerramento do chamado</h4>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 6. Inserção de nova etiqueta -->
+        <!-- 5. Inserção de nova etiqueta -->
         <div class="flow-section">
-            <h2 class="flow-title">6. Inserção de nova etiqueta</h2>
+            <h2 class="flow-title">5. Inserção de nova etiqueta</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
-                    <span class="step-icon">🏷️</span>
+                    <span class="step-icon">➡️</span>
                     <div class="step-text">
-                        <h4>Abertura de chamado no ServiceNow</h4>
+                        <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos:</p>
                         <ul class="list-disc ml-5 text-sm text-slate-700">
                             <li>Loja</li>
@@ -371,14 +322,14 @@
             </div>
         </div>
 
-        <!-- 7. Anexar comprovantes fiscais/recibos na plataforma Clara (com autorização do financeiro) -->
+        <!-- 6. Anexar comprovantes fiscais/recibos na plataforma Clara (com autorização do financeiro) -->
         <div class="flow-section">
-            <h2 class="flow-title">7. Anexar comprovantes fiscais/recibos na plataforma Clara (com autorização do financeiro)</h2>
+            <h2 class="flow-title">6. Anexar comprovantes fiscais/recibos na plataforma Clara (com autorização do financeiro)</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
-                    <span class="step-icon">📎</span>
+                    <span class="step-icon">➡️</span>
                     <div class="step-text">
-                        <h4>Loja abre chamado</h4>
+                        <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos:</p>
                         <ul class="list-disc ml-5 text-sm text-slate-700">
                             <li>Loja</li>
@@ -413,7 +364,7 @@
                 <div class="flow-step-content">
                     <span class="step-icon">🏁</span>
                     <div class="step-text">
-                        <h4>Fechamento do chamado</h4>
+                        <h4>Encerramento do chamado</h4>
                     </div>
                 </div>
             </div>
