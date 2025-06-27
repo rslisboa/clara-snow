@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxograma de Solicitações - Cartão Clara</title>
+    <title>Fluxogramas de Solicitações - Cartão Clara</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f4f7fa; color: #334155; }
+        /* Definindo as cores personalizadas no Tailwind CSS */
+        :root {
+            --color-dark-green: #005E27;
+            --color-light-green: #B5FF20;
+            --color-text-black: #000000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa;
+            color: var(--color-text-black); /* Texto principal em preto */
+        }
         .flow-section {
             background-color: #ffffff;
             border-radius: 1rem;
@@ -20,18 +31,19 @@
         .flow-title {
             font-size: 1.875rem; /* text-3xl */
             font-weight: 700; /* font-bold */
-            color: #082f49; /* text-sky-900 */
+            color: var(--color-dark-green); /* Título em verde escuro */
             text-align: center;
             margin-bottom: 2rem;
         }
         .flow-step {
-            background-color: #e0f2fe; /* bg-sky-100 */
-            border-left: 5px solid #0ea5e9; /* border-sky-500 */
+            background-color: #ffffff; /* Fundo do passo branco para contraste */
+            border-left: 5px solid var(--color-dark-green); /* Borda em verde escuro */
             padding: 1.25rem; /* p-5 */
             border-radius: 0.5rem; /* rounded-lg */
             margin-bottom: 1.5rem; /* mb-6 */
             position: relative;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            /* Usando a cor verde claro no box-shadow para um destaque sutil */
+            box-shadow: 0 2px 4px rgba(181, 255, 32, 0.2);
         }
         .flow-step-content {
             display: flex;
@@ -40,23 +52,25 @@
         .step-icon {
             font-size: 1.75rem; /* text-3xl */
             margin-right: 1rem; /* mr-4 */
-            color: #0369a1; /* text-sky-700 */
+            color: var(--color-dark-green); /* Ícone em verde escuro */
         }
         .step-text h4 {
             font-weight: 600; /* font-semibold */
-            color: #0c4a6e; /* text-sky-800 */
+            color: var(--color-dark-green); /* Título do passo em verde escuro */
             margin-bottom: 0.5rem;
+        }
+        .step-text p, .step-text ul {
+            font-size: 0.875rem; /* text-sm */
+            color: var(--color-text-black); /* Texto em preto */
         }
         .step-text ul {
             list-style: disc;
             margin-left: 1.25rem; /* ml-5 */
-            font-size: 0.875rem; /* text-sm */
-            color: #475569; /* text-slate-700 */
         }
         .flow-arrow {
             text-align: center;
             margin: 1rem 0;
-            color: #60a5fa; /* text-blue-400 */
+            color: var(--color-dark-green); /* Seta em verde escuro */
             font-size: 2rem;
             font-weight: 900;
         }
@@ -65,28 +79,35 @@
 <body class="p-8">
 
     <header class="text-center mb-12">
-        <h1 class="text-4xl font-extrabold text-sky-900">Fluxograma de Solicitações - Cartão Clara</h1>
-        <p class="text-lg text-slate-600 mt-2">Processos no ServiceNow.</p>
+        <h1 class="text-4xl font-extrabold text-[#000000]">Fluxograma de Solicitações - Cartão Clara</h1>
+        <p class="text-lg text-[#000000] mt-2">Processos no ServiceNow.</p>
     </header>
 
     <main class="max-w-4xl mx-auto">
 
-        <!-- 1. Solicitação de desbloqueio de cartão (bloqueado por falta de NF) -->
+        <!-- 1. Solicitação de desbloqueio de cartão (bloqueado por falta de Nota Fiscal/Recibo na transação) -->
         <div class="flow-section">
-            <h2 class="flow-title">1. Solicitação de desbloqueio de cartão (bloqueado por falta de NF)</h2>
+            <h2 class="flow-title">1. Solicitação de desbloqueio de cartão (bloqueado por falta de Nota Fiscal/Recibo na transação)</h2>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">O cartão do portador foi bloqueado preventivamente pela área Financeira devido à ausência ou não conformidade da Nota Fiscal/Recibo de uma transação na plataforma Clara, ultrapassando os prazos de prestação de contas estabelecidos na política. Para que o portador possa retomar o uso do cartão para novas despesas operacionais da loja, é imprescindível solicitar o desbloqueio através deste chamado, apresentando a justificativa do atraso e garantindo que o comprovante fiscal esteja devidamente anexado na plataforma.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
             <div class="flow-step">
                 <div class="flow-step-content">
                     <span class="step-icon">➡️</span>
                     <div class="step-text">
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
                             <li>Loja (dropdown)</li>
                             <li>Nome do portador do cartão</li>
-                            <li>Data da transação bloqueada</li>
-                            <li>Valor da transação</li>
                             <li>Justificativa do atraso</li>
-                            <li>Anexo do comprovante fiscal (NF/cupom)</li>
                         </ul>
                     </div>
                 </div>
@@ -97,7 +118,7 @@
                     <span class="step-icon">📊</span>
                     <div class="step-text">
                         <h4>Análise Financeira</h4>
-                        <p class="text-sm text-slate-700">A equipe financeira avalia a solicitação e os comprovantes anexados.</p>
+                        <p class="text-sm text-[#000000]">A equipe financeira irá verificar na plataforma Clara se os comprovantes da transação em questão foram anexados pelo portador.</p>
                     </div>
                 </div>
             </div>
@@ -107,7 +128,7 @@
                     <span class="step-icon">✅/❌</span>
                     <div class="step-text">
                         <h4>Desbloqueio do cartão ou retorno solicitando ajuste</h4>
-                        <p class="text-sm text-slate-700">Comprovada a regularização, o cartão é desbloqueado. Caso contrário, o financeiro retorna para ajustes.</p>
+                        <p class="text-sm text-[#000000]">Comprovada a regularização, o cartão é desbloqueado. Caso contrário, o financeiro retorna para ajustes.</p>
                     </div>
                 </div>
             </div>
@@ -127,15 +148,25 @@
             <h2 class="flow-title">2. Solicitação de liberação de categoria para compra</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">Quando a loja tenta efetuar uma compra e a transação é negada por motivo de categoria bloqueada, o usuário precisa identificar qual categoria está impedindo a compra. Para isso, o portador deverá acessar a transação negada no aplicativo ou site da Clara e verificar o campo "Categoria da compra". Com essa informação, é possível solicitar a liberação pontual da categoria para a transação específica, garantindo a conformidade e o registro adequado da despesa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
                     <span class="step-icon">➡️</span>
                     <div class="step-text">
                         <h4>Usuário abre chamado no ServiceNow</h4>
-                        <p>Campos:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
-                            <li>Loja</li>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>Loja (dropdown)</li>
+                            <li>Nome do portador do cartão</li>
                             <li>Categoria desejada (dropdown com categorias existentes ou "Outra")</li>
                             <li>Justificativa detalhada</li>
-                            <li>Comprovação da necessidade (ex: cotações, prints)</li>
                         </ul>
                     </div>
                 </div>
@@ -146,7 +177,7 @@
                     <span class="step-icon">⚖️</span>
                     <div class="step-text">
                         <h4>Financeiro avalia compatibilidade com política</h4>
-                        <p class="text-sm text-slate-700">A área financeira verifica se a nova categoria se alinha às diretrizes da política de cartões.</p>
+                        <p class="text-sm text-[#000000]">A área financeira verifica se a nova categoria se alinha às diretrizes da política de cartões, solicitando comprovação da necessidade (ex: cotações, prints) se necessário.</p>
                     </div>
                 </div>
             </div>
@@ -156,6 +187,16 @@
                     <span class="step-icon">👍/👎</span>
                     <div class="step-text">
                         <h4>Aprova ou recusa com justificativa</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">🔒</span>
+                    <div class="step-text">
+                        <h4>Financeiro bloqueia categoria após a compra</h4>
+                        <p class="text-sm text-[#000000]">Após a loja efetuar a compra, o financeiro procederá com o bloqueio da categoria liberada pontualmente.</p>
                     </div>
                 </div>
             </div>
@@ -175,15 +216,27 @@
             <h2 class="flow-title">3. Solicitação de aumento de limite</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">O limite atual do cartão definido para a loja não é suficiente para cobrir uma compra específica de valor mais elevado (ex: manutenção emergencial, compra de grande volume de material para uma ação promocional). Para evitar o bloqueio da transação e garantir a continuidade das operações, é preciso solicitar um aumento temporário ou, em casos justificados, fixo do limite do cartão.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
                     <span class="step-icon">➡️</span>
                     <div class="step-text">
                         <h4>Usuário abre chamado no ServiceNow</h4>
-                        <p>Campos:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
-                            <li>Loja</li>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>Loja (dropdown)</li>
+                            <li>Nome do portador do cartão</li>
                             <li>Limite atual</li>
                             <li>Limite solicitado</li>
                             <li>Justificativa (detalhar urgência e tipo de despesa)</li>
+                            <li>Produto a ser comprado</li>
                             <li>Período de vigência do novo limite (pontual ou fixo)</li>
                         </ul>
                     </div>
@@ -223,15 +276,28 @@
             <h2 class="flow-title">4. Compra fora da política (com acordo da área de compras)</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">Em casos excepcionais, a loja pode precisar adquirir um item ou serviço que, embora operacionalmente necessário, não se enquadra nas categorias de gastos permitidos pela política de cartões. Quando há um acordo prévio e formalizado com a área de Compras para essa exceção (ex: e-mail de aprovação da Compras), este chamado é aberto para que o Financeiro possa validar a conformidade da exceção e, se aprovado, autorizar temporariamente a transação ou ajustar as etiquetas/limites conforme necessário.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
                     <span class="step-icon">➡️</span>
                     <div class="step-text">
                         <h4>Usuário abre chamado no ServiceNow</h4>
-                        <p>Campos:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
-                            <li>Loja</li>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>Loja (dropdown)</li>
+                            <li>Nome do portador do cartão</li>
                             <li>Descrição do item a ser comprado</li>
+                            <li>Valor do item a ser comprado</li>
                             <li>Justificativa da exceção</li>
-                            <li>Anexo: e-mail/autorização da área de Compras</li>
+                            <li>Anexo: E-mail/autorização da área de Compras</li>
+                            <li>Anexo: E-mail/autorização de André Taube (Diretor de Op. de Lojas)</li>
                         </ul>
                     </div>
                 </div>
@@ -279,12 +345,23 @@
             <h2 class="flow-title">5. Inserção de nova etiqueta</h2>
             <div class="flow-step">
                 <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">Ao realizar uma despesa operacional com o cartão Clara, pode ocorrer de a categoria de gasto não possuir uma etiqueta correspondente já cadastrada na plataforma. Para que a prestação de contas seja feita corretamente e a despesa seja devidamente classificada no sistema contábil, é necessário solicitar a criação e inserção de uma nova etiqueta, detalhando o tipo de gasto associado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
                     <span class="step-icon">➡️</span>
                     <div class="step-text">
                         <h4>Usuário abre chamado no ServiceNow</h4>
-                        <p>Campos:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
-                            <li>Loja</li>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>Loja (dropdown)</li>
+                            <li>Nome do portador do cartão</li>
                             <li>Nome da etiqueta solicitada</li>
                             <li>Descrição do gasto associado</li>
                             <li>Justificativa da ausência da etiqueta atual</li>
@@ -322,21 +399,33 @@
             </div>
         </div>
 
-        <!-- 6. Anexar comprovantes fiscais/recibos na plataforma Clara (com autorização do financeiro) -->
+        <!-- 6. Financeiro Anexar comprovantes fiscais/recibos na plataforma Clara -->
         <div class="flow-section">
-            <h2 class="flow-title">6. Anexar comprovantes fiscais/recibos na plataforma Clara (com autorização do financeiro)</h2>
+            <h2 class="flow-title">6. Financeiro Anexar comprovantes fiscais/recibos na plataforma Clara</h2>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">A loja necessita que o Financeiro realize a inserção manual de comprovantes fiscais/recibos na plataforma Clara em casos de **falha técnica** que impeça a inserção direta pela loja. Além disso, este chamado é necessário em casos de **desligamento ou afastamento do gerente responsável** pelo cartão, impossibilitando que a própria loja realize a prestação de contas. Este processo garante a correta prestação de contas, mesmo diante de impedimentos operacionais, desde que haja uma autorização prévia do Financeiro.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
             <div class="flow-step">
                 <div class="flow-step-content">
                     <span class="step-icon">➡️</span>
                     <div class="step-text">
                         <h4>Usuário abre chamado no ServiceNow</h4>
-                        <p>Campos:</p>
-                        <ul class="list-disc ml-5 text-sm text-slate-700">
-                            <li>Loja</li>
-                            <li>Nome do portador</li>
-                            <li>Transações a serem regularizadas (data, valor)</li>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>Loja (dropdown)</li>
+                            <li>Nome do portador do cartão</li>
+                            <li>Anexo: Planilha com Data de Transação e Valor da Transação (<a href="https://docs.google.com/spreadsheets/d/1QjWjvmxFaEdJLqM4x0KJj4Kzyjmr9ShN/export?format=xlsx&ouid=103093324357624510230&rtpof=true&sd=true" download="modelo_planilha_transacoes.xlsx" class="text-[#005E27] underline hover:text-[#B5FF20]">Clique para baixar o modelo da planilha</a>)</li>
+                            <li>Anexo: **Planilha preenchida** com os dados das transações e comprovantes</li>
                             <li>Comprovantes fiscais/recibos digitalizados (anexos)</li>
                             <li>Justificativa de impossibilidade de inserção pela loja</li>
+                            <li>Autorização prévia do Financeiro (para esse procedimento)</li>
                         </ul>
                     </div>
                 </div>
@@ -372,8 +461,8 @@
 
     </main>
 
-    <footer class="text-center mt-12 text-slate-500 text-sm">
-        <p>&copy; 2025 Grupo SBF. Todos os direitos reservados.</p>
+    <footer class="text-center mt-12 text-[#000000] text-sm">
+        <p>2025 Grupo SBF. Todos os direitos reservados.</p>
     </footer>
 
 </body>
