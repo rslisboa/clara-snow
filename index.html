@@ -85,7 +85,6 @@
 
     <main class="max-w-4xl mx-auto">
 
-        <!-- 1. Solicitação de desbloqueio de cartão (bloqueado por falta de Nota Fiscal/Recibo na transação) -->
         <div class="flow-section">
             <h2 class="flow-title">1. Solicitação de desbloqueio de cartão (bloqueado por falta de Nota Fiscal/Recibo na transação)</h2>
             <div class="flow-step">
@@ -105,6 +104,7 @@
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
                         <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
                             <li>Loja detentora do cartão (dropdown)</li>
                             <li>Loja de utilização do cartão (dropdown)</li>
                             <li>Nome do portador do cartão</li>
@@ -144,7 +144,6 @@
             </div>
         </div>
 
-        <!-- 2. Solicitação de liberação de categoria para compra -->
         <div class="flow-section">
             <h2 class="flow-title">2. Solicitação de liberação de categoria para compra</h2>
             <div class="flow-step">
@@ -164,13 +163,14 @@
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
                         <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
                             <li>Loja detentora do cartão (dropdown)</li>
                             <li>Loja de utilização do cartão (dropdown)</li>
                             <li>Já tentou utilizar o cartão para essa compra? (Sim/Não)</li>
                             <li>Se 'Sim': Data da transação negada</li>
                             <li>Se 'Sim': Valor da transação negada</li>
                             <li>Nome do portador do cartão</li>
-                            <li>Categoria desejada (dropdown com categorias existentes ou "Outra")</li>
+                            <li>Categoria desejada (dropdown com categorias existentes ou "Outra") <a href="https://docs.google.com/spreadsheets/d/1pPQmWCQ9EduiCgjEhXhNKmErfgz41g17yHBoNtmOuZE/edit?gid=0#gid=0" target="_blank" class="text-[#005E27] underline hover:text-[#B5FF20]">(Ver categorias)</a></li>
                             <li>Justificativa detalhada</li>
                         </ul>
                     </div>
@@ -216,7 +216,6 @@
             </div>
         </div>
 
-        <!-- 3. Solicitação de aumento de limite -->
         <div class="flow-section">
             <h2 class="flow-title">3. Solicitação de aumento de limite</h2>
             <div class="flow-step">
@@ -236,6 +235,7 @@
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
                         <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
                             <li>Loja detentora do cartão (dropdown)</li>
                             <li>Loja de utilização do cartão (dropdown)</li>
                             <li>Nome do portador do cartão</li>
@@ -277,7 +277,6 @@
             </div>
         </div>
 
-        <!-- 4. Compra fora da política (com acordo da área de compras) -->
         <div class="flow-section">
             <h2 class="flow-title">4. Compra fora da política (com acordo da área de compras)</h2>
             <div class="flow-step">
@@ -297,6 +296,7 @@
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
                         <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
                             <li>Loja detentora do cartão (dropdown)</li>
                             <li>Loja de utilização do cartão (dropdown)</li>
                             <li>Nome do portador do cartão</li>
@@ -347,7 +347,6 @@
             </div>
         </div>
 
-        <!-- 5. Inserção de nova etiqueta -->
         <div class="flow-section">
             <h2 class="flow-title">5. Inserção de nova etiqueta</h2>
             <div class="flow-step">
@@ -367,6 +366,7 @@
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
                         <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
                             <li>Loja detentora do cartão (dropdown)</li>
                             <li>Loja de utilização do cartão (dropdown)</li>
                             <li>Nome do portador do cartão</li>
@@ -407,7 +407,6 @@
             </div>
         </div>
 
-        <!-- 6. Financeiro Anexar comprovantes fiscais/recibos na plataforma Clara -->
         <div class="flow-section">
             <h2 class="flow-title">6. Financeiro Anexar comprovantes fiscais/recibos na plataforma Clara</h2>
             <div class="flow-step">
@@ -427,6 +426,7 @@
                         <h4>Usuário abre chamado no ServiceNow</h4>
                         <p>Campos obrigatórios:</p>
                         <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
                             <li>Loja detentora do cartão (dropdown)</li>
                             <li>Loja de utilização do cartão (dropdown)</li>
                             <li>Planilha com Data de Transação e Valor da Transação (<a href="https://docs.google.com/spreadsheets/d/1QjWjvmxFaEdJLqM4x0KJj4Kzyjmr9ShN/export?format=xlsx&ouid=103093324357624510230&rtpof=true&sd=true" download="modelo_planilha_transacoes.xlsx" class="text-[#005E27] underline hover:text-[#B5FF20]">Clique para baixar o modelo da planilha</a>)</li>
