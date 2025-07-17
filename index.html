@@ -467,6 +467,107 @@
             </div>
         </div>
 
+        <div class="flow-section">
+            <h2 class="flow-title">7. Troca de Gerente (mudança entre lojas)</h2>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">Este chamado deve ser aberto quando um gerente que possui um Cartão Clara é transferido de uma loja para outra. É crucial informar a BU, as lojas de origem e destino, e a data da troca para garantir que o cartão seja vinculado corretamente à nova unidade. O cartão físico deve ser levado pelo gerente para a nova loja para continuar sendo utilizado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">➡️</span>
+                    <div class="step-text">
+                        <h4>Usuário abre chamado no ServiceNow</h4>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
+                            <li>Loja anterior (dropdown)</li>
+                            <li>Loja nova (dropdown)</li>
+                            <li>Data da troca</li>
+                            <li>O cartão da Clara está em mãos na nova loja? (Sim/Não)</li>
+                        </ul>
+                        <p class="text-sm text-[#005E27] mt-2"><strong>Importante:</strong> Em caso de troca de loja, o cartão deve ser levado para utilização na nova loja.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">⚙️</span>
+                    <div class="step-text">
+                        <h4>Financeiro atualiza os dados do cartão</h4>
+                        <p class="text-sm text-[#000000]">O Financeiro realizará os ajustes cadastrais na plataforma Clara para vincular o cartão à nova loja do gerente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">🏁</span>
+                    <div class="step-text">
+                        <h4>Encerramento do chamado</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flow-section">
+            <h2 class="flow-title">8. Gasto Indevido (pessoal)</h2>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">ℹ️</span>
+                    <div class="step-text">
+                        <h4>Necessidade de Abertura de Chamado</h4>
+                        <p class="text-sm text-[#000000]">Este chamado deve ser aberto quando o portador do Cartão Clara realizar uma despesa de natureza pessoal ou não corporativa. É fundamental registrar este tipo de gasto para que o valor seja ressarcido à empresa. O chamado deve incluir todos os detalhes da transação e o comprovante fiscal/recibo, além de uma justificativa clara do uso indevido.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">➡️</span>
+                    <div class="step-text">
+                        <h4>Usuário abre chamado no ServiceNow</h4>
+                        <p>Campos obrigatórios:</p>
+                        <ul class="list-disc ml-5 text-sm text-[#000000]">
+                            <li>BU (Centauro ou Fisia)</li>
+                            <li>Loja detentora do cartão (dropdown)</li>
+                            <li>Nome do portador do cartão</li>
+                            <li>Data da transação</li>
+                            <li>Valor da transação</li>
+                            <li>Anexo: Comprovante do gasto (nota fiscal/recibo)</li>
+                            <li>Justificativa do uso indevido</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">💰</span>
+                    <div class="step-text">
+                        <h4>Financeiro aciona área responsável para ressarcimento</h4>
+                        <p class="text-sm text-[#000000]">Com base nas informações fornecidas, o Financeiro iniciará o processo de cobrança ou desconto do valor do portador do cartão.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow">⬇️</div>
+            <div class="flow-step">
+                <div class="flow-step-content">
+                    <span class="step-icon">🏁</span>
+                    <div class="step-text">
+                        <h4>Encerramento do chamado</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="text-center mt-12 text-[#000000] text-sm">
